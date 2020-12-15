@@ -36,11 +36,13 @@ tel.addEventListener('input', function () {
     }
 });
 
-//uc4-Validating password min 8 characters
+//UC4 Validate password min 8 characters
+
+//UC5-Atleast one special char, atleast one digit and one uppercase letter
 const pwd = document.querySelector('#pwd');
 const pwdError = document.querySelector('.pwd-error');
 pwd.addEventListener('input', function () {
-    let pwdRegex = RegExp('^.{8,}$');
+    let pwdRegex = RegExp('^(?=.*[0-9])(?=.*[A-Z])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$');
     if (pwdRegex.test(pwd.value)) {
         pwdError.textContent = "";
     }
